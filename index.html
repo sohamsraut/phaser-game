@@ -5,11 +5,24 @@
     <title>Phaser Game</title>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.14.0/dist/phaser.min.js"></script>
     <script src="game.js"></script>
+    <script src="play.js"></script>
   </head>
   <body>
     <h1>Phaser Game</h1>
     <div id="game">
     </div>
+    <script>
+      const phaserConfig = {
+        type: Phaser.AUTO,
+        parent: "game",
+        width: 1280,
+        height: 720,
+        backgroundColor: "#3498db",
+        physics: { default: 'arcade' }, // The physics engine to use
+        scene: [playScene, mainScene]
+      }
+      const game = new Phaser.Game(phaserConfig);
+    </script>
     <p>Use the arrow keys to move and collect coins!</p>
   </body>
 </html>
